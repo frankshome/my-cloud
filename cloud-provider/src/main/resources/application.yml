@@ -1,0 +1,11 @@
+server:
+  port: 8002
+eureka:
+  client:
+    service-url:
+      # 设置与EurekaServer 交互的地址 （查询服务和注册服务都需要依赖该地址）
+      defaultZone: http://localhost:7001/eurake/
+#spring:
+#  application:
+#    name: cloud-provider
+#debug: false

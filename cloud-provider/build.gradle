@@ -1,0 +1,12 @@
+description = "cloud-provider"
+
+dependencies {
+    compile ":cloud-entities"
+    compile "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
+}
+
+
+bootJar {
+    baseName = 'cloud-provider'
+    version =  '0.1.0'
+}
