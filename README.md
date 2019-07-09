@@ -1,5 +1,13 @@
 # my-cloud
 
+cd /private/etc
+
+vi hosts 
+    
+    > 127.0.0.1 peer1
+    > 127.0.0.1 peer2
+    > 127.0.0.1 peer3
+
 1. cloud-api           eureka服务消费者
     * 通过restTemplate对不具体的指定服务提供者的ip和端口，只需要访问服务名称，可实现负载均衡
 2. cloud-entities      公共模块
