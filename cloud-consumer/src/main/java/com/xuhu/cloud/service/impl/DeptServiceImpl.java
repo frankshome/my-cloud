@@ -12,13 +12,13 @@ import org.springframework.web.client.RestTemplate;
 public class DeptServiceImpl implements DeptService {
 
     @Autowired
-    private RestTemplate myRestTemplate;
+    private RestTemplate restTemplate;
 
     @Override
     public Dept getDeptById(String id) {
         String url = "http://cloud-dept-provider/deptProvider/dept/" + id;
         log.info("请求的url={}", url);
-        Dept dept = myRestTemplate.getForObject(url, Dept.class);
+        Dept dept = restTemplate.getForObject(url, Dept.class);
         return dept;
     }
 

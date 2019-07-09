@@ -3,9 +3,17 @@ server:
   servlet:
     context-path: /
 eureka:
+  instance:
+    prefer-ip-address: true # 显示IP
   client:
     service-url:
       defaultZone: http://peer1:7001/eureka/,http://peer2:7002/eureka/,http://peer3:7003/eureka/
 spring:
   application:
     name: cloud-consumer
+
+ribbon-client:
+  ribbon:
+    # 负载均衡规则
+    #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
