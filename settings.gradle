@@ -1,5 +1,5 @@
 rootProject.name = 'my-cloud'
-include 'cloud-api'
+include 'cloud-consumer'
 include 'cloud-entities'
 include 'cloud-eureka'
 include 'cloud-provider'

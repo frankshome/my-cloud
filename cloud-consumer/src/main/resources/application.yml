@@ -1,0 +1,11 @@
+server:
+  port: ${port}
+  servlet:
+    context-path: /
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:7001/eureka/,http://peer2:7002/eureka/,http://peer3:7003/eureka/
+spring:
+  application:
+    name: cloud-consumer

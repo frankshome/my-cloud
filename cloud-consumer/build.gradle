@@ -1,4 +1,5 @@
-description = "cloud-provider"
+
+description = "cloud-consumer"
 
 dependencies {
     compile project(":cloud-entities")
@@ -7,6 +8,6 @@ dependencies {
 
 
 bootJar {
-    baseName = 'cloud-provider'
+    baseName = 'cloud-consumer'
     version =  '0.1.0'
 }

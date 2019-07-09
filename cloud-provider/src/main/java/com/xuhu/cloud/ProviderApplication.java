@@ -19,9 +19,9 @@ public class ProviderApplication {
 
     @Value("${server.port}")
     String port;
-    @GetMapping("/hi")
+    @GetMapping("/")
     public String home() {
-        return "hi " + port;
+        return "provider running, port=" + port;
     }
 
 }
