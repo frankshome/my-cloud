@@ -12,8 +12,8 @@ spring:
   application:
     name: cloud-consumer
 
-ribbon-client:
-  ribbon:
-    # 负载均衡规则
+#ribbon-client:
+#  ribbon:
+    # 负载均衡规则 等同于 RestConfig.myRule()
     #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
