@@ -4,6 +4,7 @@ import com.xuhu.cloud.entities.Dept;
 import com.xuhu.cloud.service.DeptService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,6 +16,7 @@ public class DeptServiceImpl implements DeptService {
     private RestTemplate restTemplate;
 
     @Override
+    @Cacheable(value = "dept", key = "#id")
     public Dept getDeptById(String id) {
         String url = "http://cloud-dept-provider/deptProvider/dept/" + id;
         log.info("请求的url={}", url);

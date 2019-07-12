@@ -36,10 +36,12 @@ subprojects {
         springCloudVersion = "Finchley.SR2"
         lombokVersion = "1.18.8"
         junitVersion = "4.12"
+        jedisVersion = "2.9.0"
     }
 
     dependencyManagement {
         imports {
+            mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
         }
     }
