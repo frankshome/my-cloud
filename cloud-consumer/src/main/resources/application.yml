@@ -36,8 +36,4 @@ spring:
 #  ribbon:
     # 负载均衡规则 等同于 RestConfig.myRule()
     #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
-<<<<<<< HEAD
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
-=======
-#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
->>>>>>> a8689a617637afd6aa31d1ee83e100478e262c57

@@ -19,6 +19,7 @@ allprojects {
 }
 
 subprojects {
+    apply plugin: 'maven'
     apply plugin: 'java'
     apply plugin: 'org.springframework.boot'
     // 指定JDK版本
@@ -28,6 +29,7 @@ subprojects {
     // 指定编码格式
     [compileJava,compileTestJava,javadoc]*.options*.encoding = 'UTF-8'
     repositories {
+        mavenLocal()
         maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
     }
 
