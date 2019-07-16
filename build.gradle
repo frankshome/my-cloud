@@ -40,6 +40,7 @@ subprojects {
         junitVersion = "4.12"
         jedisVersion = "2.9.0"
         myBatisPlusVersion = "3.1.2"
+        apacheCommonsLangVersion = "3.9"
     }
 
     dependencyManagement {
@@ -57,7 +58,7 @@ subprojects {
         compileOnly "org.projectlombok:lombok:${lombokVersion}"
         annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
         testCompile "junit:junit:${junitVersion}"
-        compile "com.baomidou:mybatis-plus-boot-starter:${myBatisPlusVersion}"
+        compile "org.apache.commons:commons-lang3:${apacheCommonsLangVersion}"
     }
 
 

@@ -11,7 +11,7 @@ jar {
 }
 
 dependencies {
-
+    compile "com.baomidou:mybatis-plus-boot-starter:${myBatisPlusVersion}"
 }
 
 // 上传组件到nexus

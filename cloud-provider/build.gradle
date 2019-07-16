@@ -2,6 +2,7 @@ description = "cloud-provider"
 
 dependencies {
     compile project(":cloud-entities")
+    compile project(":cloud-dao")
     compile "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
 }
 
