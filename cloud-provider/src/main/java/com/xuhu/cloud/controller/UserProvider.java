@@ -25,8 +25,8 @@ public class UserProvider {
     @Autowired
     private UserManager userManager;
 
-    @GetMapping("/user/{name}")
-    public List<UserInfoDTO> getDept(@PathVariable("name") String name) {
+    @GetMapping("/user/list/{name}")
+    public List<UserInfoDTO> queryUserList(@PathVariable("name") String name) {
         List<UserInfo> list = userManager.queryListByName(name);
         List<UserInfoDTO> dtoList = list.stream().map(e -> convertWith(e, UserInfoDTO.class))
                 .collect(Collectors.toList());

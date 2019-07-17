@@ -18,7 +18,7 @@ public class DeptServiceImpl implements DeptService {
     @Override
     @Cacheable(value = "dept", key = "#id")
     public DeptDTO getDeptById(String id) {
-        String url = "http://cloud-dept-provider/deptProvider/dept/" + id;
+        String url = "http://cloud-provider/deptProvider/dept/" + id;
         log.info("请求的url={}", url);
         DeptDTO deptDTO = restTemplate.getForObject(url, DeptDTO.class);
         return deptDTO;
