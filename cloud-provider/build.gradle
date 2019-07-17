@@ -1,8 +1,13 @@
 description = "cloud-provider"
 
 dependencies {
-    compile project(":cloud-entities")
+    compile project(":cloud-common")
     compile "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
+    compile "com.baomidou:mybatis-plus-boot-starter:${myBatisPlusVersion}"
+    compile "com.baomidou:mybatis-plus-generator:${myBatisPlusVersion}"
+    compile "mysql:mysql-connector-java:${mysqlDriverVersion}"
+    compile "org.apache.velocity:velocity-engine-core:${velocityVersion}"
+    compile "com.alibaba:druid-spring-boot-starter:${driudVersion}"
 }
 
 

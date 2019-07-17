@@ -1,0 +1,21 @@
+description = "cloud-common"
+
+
+bootJar {
+    enabled = false
+}
+
+
+jar {
+    enabled = true
+}
+
+dependencies {
+}
+
+// 上传组件到nexus
+uploadArchives {
+    repositories {
+        mavenLocal()
+    }
+}

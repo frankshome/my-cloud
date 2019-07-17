@@ -1,6 +1,6 @@
 package com.xuhu.cloud.controller;
 
-import com.xuhu.cloud.entities.Dept;
+import com.xuhu.cloud.modal.DeptDTO;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,13 +15,13 @@ public class DeptProvider {
     private Integer port;
 
     @GetMapping("/dept/{id}")
-    public Dept getDept(@PathVariable("id") String id) {
-        Dept dept = new Dept();
-        dept.setId(id);
-        dept.setDeptName("测试部门" + id);
-        dept.setSource(port + "");
+    public DeptDTO getDept(@PathVariable("id") String id) {
+        DeptDTO deptDTO = new DeptDTO();
+        deptDTO.setId(id);
+        deptDTO.setDeptName("测试部门" + id);
+        deptDTO.setSource(port + "");
 
-        return dept;
+        return deptDTO;
     }
 
 }

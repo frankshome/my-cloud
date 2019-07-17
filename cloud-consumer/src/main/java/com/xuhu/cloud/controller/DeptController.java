@@ -1,6 +1,6 @@
 package com.xuhu.cloud.controller;
 
-import com.xuhu.cloud.entities.Dept;
+import com.xuhu.cloud.modal.DeptDTO;
 import com.xuhu.cloud.service.DeptService;
 import com.xuhu.cloud.utils.exception.BizException;
 import com.xuhu.cloud.utils.result.Result;
@@ -21,7 +21,7 @@ public class DeptController {
     private DeptService deptService;
 
     @GetMapping("/getDept/{id}")
-    public Result<Dept> getDept(@PathVariable String id){
+    public Result<DeptDTO> getDept(@PathVariable String id){
         if (StringUtils.equals(id, "2001")) {
             throw new BizException("2001", "当前id数据不存在");
         }

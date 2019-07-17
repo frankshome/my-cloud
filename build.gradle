@@ -39,6 +39,11 @@ subprojects {
         lombokVersion = "1.18.8"
         junitVersion = "4.12"
         jedisVersion = "2.9.0"
+        myBatisPlusVersion = "3.1.2"
+        apacheCommonsLangVersion = "3.9"
+        mysqlDriverVersion = "5.1.47"
+        velocityVersion = "2.1"
+        driudVersion = "1.1.18"
     }
 
     dependencyManagement {
@@ -56,6 +61,7 @@ subprojects {
         compileOnly "org.projectlombok:lombok:${lombokVersion}"
         annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
         testCompile "junit:junit:${junitVersion}"
+        compile "org.apache.commons:commons-lang3:${apacheCommonsLangVersion}"
     }
 
 
