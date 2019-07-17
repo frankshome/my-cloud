@@ -1,7 +1,7 @@
 package com.xuhu.cloud.service;
 
-import com.xuhu.cloud.entities.Dept;
+import com.xuhu.cloud.modal.DeptDTO;
 
 public interface DeptService {
-    Dept getDeptById(String id);
+    DeptDTO getDeptById(String id);
 }

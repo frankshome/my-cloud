@@ -1,9 +1,39 @@
 server:
-  port: 9001
+  port: ${port}
   servlet:
     context-path: /
-
 eureka:
+  instance:
+    prefer-ip-address: true # 显示IP
   client:
     service-url:
       defaultZone: http://peer1:7001/eureka/,http://peer2:7002/eureka/,http://peer3:7003/eureka/
+spring:
+  application:
+    name: cloud-consumer
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    database: 0
+    lettuce: # lettuce客户端 不同于jedis，该连接池底层使用netty实现
+      pool:
+        max-active: 8 # 连接池最大连接数（使用负值表示没有限制） 默认8
+        max-idle: 8   # 连接池中的最大空闲连接 默认8
+        min-idle: 0   # 连接池中的最小空闲连接 默认0
+        max-wait: -1ms # 注意时间单位连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+    timeout: 300ms
+  cache:
+    type: redis
+#    jedis: # jedis客户端
+#      pool:
+#        max-active:
+#        max-idle:
+#        min-idle:
+#        max-wait:
+
+#ribbon-client:
+#  ribbon:
+    # 负载均衡规则 等同于 RestConfig.myRule()
+    #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule

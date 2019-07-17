@@ -1,6 +1,6 @@
 package com.xuhu.cloud.service.impl;
 
-import com.xuhu.cloud.entities.Dept;
+import com.xuhu.cloud.modal.DeptDTO;
 import com.xuhu.cloud.service.DeptService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +17,11 @@ public class DeptServiceImpl implements DeptService {
 
     @Override
     @Cacheable(value = "dept", key = "#id")
-    public Dept getDeptById(String id) {
+    public DeptDTO getDeptById(String id) {
         String url = "http://cloud-dept-provider/deptProvider/dept/" + id;
         log.info("请求的url={}", url);
-        Dept dept = restTemplate.getForObject(url, Dept.class);
-        return dept;
+        DeptDTO deptDTO = restTemplate.getForObject(url, DeptDTO.class);
+        return deptDTO;
     }
 
 }
