@@ -6,7 +6,8 @@ import java.io.Serializable;
 
 
 @Getter
-public class Result<T> implements Serializable {
+public final class Result<T> implements Serializable {
+
     private String status;
     private String code;
     private String errMsg;

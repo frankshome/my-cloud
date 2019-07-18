@@ -8,6 +8,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-data-redis"
     compile "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
     compile "org.springframework.cloud:spring-cloud-starter-openfeign"
+    compile "org.springframework.cloud:spring-cloud-starter-netflix-hystrix"
 //    eureka-client已经包含了ribbon，如果不是和eureka-client集成，需要添加以下依赖:
 //    compile "org.springframework.cloud:spring-cloud-starter-netflix-ribbon"
 }

@@ -4,6 +4,8 @@ import com.xuhu.cloud.entity.user.UserInfo;
 import com.xuhu.cloud.manager.user.UserManager;
 import com.xuhu.cloud.modal.UserInfoDTO;
 import com.xuhu.cloud.utils.exception.BizException;
+import com.xuhu.cloud.utils.result.Result;
+import com.xuhu.cloud.utils.result.ResultUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.BeanUtils;
@@ -26,11 +28,11 @@ public class UserProvider {
     private UserManager userManager;
 
     @GetMapping("/user/list/{name}")
-    public List<UserInfoDTO> queryUserList(@PathVariable("name") String name) {
+    public Result<List<UserInfoDTO>> queryUserList(@PathVariable("name") String name) {
         List<UserInfo> list = userManager.queryListByName(name);
         List<UserInfoDTO> dtoList = list.stream().map(e -> convertWith(e, UserInfoDTO.class))
                 .collect(Collectors.toList());
-        return dtoList;
+        return ResultUtil.success(dtoList);
     }
 
     private <T, E> E convertWith(T sourceObj, Class<E> targetClz) {

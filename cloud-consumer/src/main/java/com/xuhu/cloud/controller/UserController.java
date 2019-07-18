@@ -4,6 +4,7 @@ import java.util.List;
 import com.xuhu.cloud.feignclient.UserInfoFeignClient;
 import com.xuhu.cloud.modal.UserInfoDTO;
 import com.xuhu.cloud.utils.result.Result;
+import com.xuhu.cloud.utils.result.ResultCheckUtil;
 import com.xuhu.cloud.utils.result.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +22,11 @@ public class UserController {
 
     @GetMapping("/list/{name}")
     public Result<List<UserInfoDTO>> getDept(@PathVariable String name){
-        return ResultUtil.success(userInfoFeignClient.queryUserList(name));
+        Result<List<UserInfoDTO>> result = userInfoFeignClient.queryUserList(name);
+
+        List<UserInfoDTO> list = ResultCheckUtil.checkNotFail(result);
+        return ResultUtil.success(list);
     }
+
 
 }

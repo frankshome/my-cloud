@@ -2,6 +2,9 @@ package com.xuhu.cloud.utils.result;
 
 public final class ResultUtil {
 
+    private ResultUtil() {
+    }
+
     public static <T> Result<T> success(){
         Result<T> result = new Result<>();
         return result;
